@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "dobleh",
+      "password": "qwe"
+    },
+    {
+      "id": 3,
+      "username": "jamal",
+      "password": "1234"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "title": "Jumanji: The Next Level",
+      "sutradara": "Jake Kasdan",
+      "durasi": 121,
+      "jadwal": [
+        9,
+        12,
+        16
+      ],
+      "sinopsis": "Dwayne Johnson, Karen Gillan, Jack Black dan Kevin Hart kembali ke Jumanji,keempatnya harus menyelamatkan salah satu teman mereka. Namun permainan telah berubah.Para pemain kini harus lebih berani melintasi rintangan ekstrem dan kembali dengan selamat dari permainan paling berbahaya di dunia.",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157380448937451_287x421.jpg",
+      "genre": "action",
+      "produksi": "Columbia Pictures"
+    },
+    {
+      "id": 2,
+      "title": "Last Christmas",
+      "sutradara": "Paul Feig",
+      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
+      "genre": "action",
+      "produksi": "Columbia Pictures"
+    },
+    {
+      "id": 2,
+      "title": "Last Christmas",
+      "sutradara": "Paul Feig",
+      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
+      "genre": "action",
+      "produksi": "Columbia Pictures"
+    },
+    {
+      "id": 2,
+      "title": "Last Christmas",
+      "sutradara": "Paul Feig",
+      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
+      "genre": "action",
+      "produksi": "Columbia Pictures"
+    },
+    {
+      "id": 2,
+      "title": "Last Christmas",
+      "sutradara": "Paul Feig",
+      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
+      "genre": "action",
+      "produksi": "Columbia Pictures"
+    },
+    {
+      "data": {
+        "title": "",
+        "image": "",
+        "sinopsis": "",
+        "sutradara": "",
+        "genre": "",
+        "durasi": "",
+        "produksi": "RANS"
+      },
+      "id": 3
+    }
+  ]
+}

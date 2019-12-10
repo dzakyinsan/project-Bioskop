@@ -16,69 +16,115 @@
       "password": "1234"
     }
   ],
-  "movies": [
+  "studios": [
     {
       "id": 1,
-      "title": "Jumanji: The Next Level",
+      "nama": "studio 1",
+      "jumlahKursi": 260
+    },
+    {
+      "id": 2,
+      "nama": "studio 2",
+      "jumlahKursi": 240
+    },
+    {
+      "id": 3,
+      "nama": "studio 3",
+      "jumlahKursi": 200
+    }
+  ],
+  "movies": [
+    {
+      "title": "Jumanji",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157380448937451_287x421.jpg",
+      "sinopsis": "Dwayne Johnson, Karen Gillan, Jack Black dan Kevin Hart kembali ke Jumanji,keempatnya harus menyelamatkan salah satu teman mereka. Namun permainan telah berubah.Para pemain kini harus lebih berani melintasi rintangan ekstrem dan kembali dengan selamat dari permainan paling berbahaya di dunia.",
       "sutradara": "Jake Kasdan",
-      "durasi": 121,
+      "genre": "action",
+      "durasi": "121",
+      "produksi": "RANS",
       "jadwal": [
-        9,
+        20,
+        22
+      ],
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "studioId": "1",
+      "id": 1
+    },
+    {
+      "title": "Last Chris",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
+      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
+      "sutradara": "Paul Feig",
+      "genre": "action",
+      "durasi": "121",
+      "produksi": "RANS",
+      "jadwal": [
         12,
         16
       ],
-      "sinopsis": "Dwayne Johnson, Karen Gillan, Jack Black dan Kevin Hart kembali ke Jumanji,keempatnya harus menyelamatkan salah satu teman mereka. Namun permainan telah berubah.Para pemain kini harus lebih berani melintasi rintangan ekstrem dan kembali dengan selamat dari permainan paling berbahaya di dunia.",
-      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157380448937451_287x421.jpg",
-      "genre": "action",
-      "produksi": "Columbia Pictures"
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "studioId": "1",
+      "id": 2
     },
     {
-      "id": 2,
-      "title": "Last Christmas",
-      "sutradara": "Paul Feig",
-      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
-      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
-      "genre": "action",
-      "produksi": "Columbia Pictures"
+      "id": 3,
+      "title": "Habibie & Ainun 3",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157466395513352_287x421.jpg",
+      "sinopsis": "Kisah Ainun (Maudy Ayunda) sebagaimana remaja di usianya ,punya kisah kasih yang cukup unik, menggelitik dan menarik.Saat di SMA, Ainun dikenal sebagai sosok cerdas yang menjadi pujaan di sekolahnya dan menjadi incaran banyak siswa laki-laki, termasuk Habibie. Hubungan mereka bermula dari sebuah pertemanan. Di bangku kuliah Ainun, Sebagai mahasiswi kedokteran menjadi sosok yang popular di lingkungan kampusnya dan menjadi sosok dambaan setiap pria.Ahmad (Jefri Nichols), Pria tampan yang berasal dari keluarga terpandang dan kawan sekampus Ainun adalah pria yang akhirnya ia berani menyatakan cintanya kepada Ainun. Lantas apa yang membuat BJ Habibie menjadi pelabuhan terakhir perjalanan cinta Ainun. Habibie Ainun 3, Terinspirasi dari masa muda almarhumah Hasri Ainun Besari Habibie dan kenangan BJ Habibie atas belahan jiwanya.",
+      "sutradara": "hanung bramantyo",
+      "genre": "romance",
+      "durasi": "121",
+      "produksi": "RANS",
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "jadwal": [
+        14,
+        16
+      ]
     },
     {
-      "id": 2,
-      "title": "Last Christmas",
-      "sutradara": "Paul Feig",
-      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
-      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
-      "genre": "action",
-      "produksi": "Columbia Pictures"
+      "title": "Eggnoid",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157356145959988_287x421.jpg",
+      "sinopsis": "Selama 2 tahun terakhir Ran dan Eggy telah menjadi sepasang sahabat yang tak terpisahkan. Ran yang dulu kesepian dan penuh dengan kesedihan, kini menjadi sosok yang lebih bahagia karena Eggy. Perasaan yang awalnya hanya sebagai sahabat, pelan-pelan berubah menjadi cinta. Sayangnya, Eggy bukan manusia biasa. Melainkan Eggnoid yang dikirim dari masa depan. Sebagai Eggnoid, Eggy memiliki aturan-aturan yang tidak boleh dilanggar. Kini, Eggy terancam dikirim pulang ke masa depan dan berpisah dengan Ran selamanya karena salah satu aturan besar yang tidak boleh ia langgar adalah jatuh cinta dan pacaran dengan Ran.",
+      "sutradara": "Naya Anandita",
+      "genre": "Komedi",
+      "durasi": "140",
+      "produksi": "RANS",
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "jadwal": [
+        12,
+        14
+      ],
+      "id": 4
     },
     {
-      "id": 2,
-      "title": "Last Christmas",
-      "sutradara": "Paul Feig",
-      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
-      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
-      "genre": "action",
-      "produksi": "Columbia Pictures"
+      "title": "Darah Daging",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/15743293802147_287x421.jpg",
+      "sinopsis": "Seberapa besar pengorbanan yang bisa Anda berikan untuk menyelamatkan Ibu yang telah merawat Anda dari kecil? Pertanyaan tersebut dibuktikan ketiga bersaudara: ARYA (Ario Bayu), RAHMAT (Rangga Nattra) dan FIKRI (Arnold Leonard) dengan melakukan perampokan bank, mereka mengajak sahabat Rahmat dari kecil, SALIM (Donny Alamsyah) ikut serta pula BORNE (Tanta Ginting), Perampokan tersebut tidak berlangsung sesuai rencana dan mengakibatkan SALIM ditangkap dan dihukum.  12 tahun berlalu, SALIM yang dijatuhi hukuman mati kedatangan seorang penulis perempuan, HANNA (Estelle Linden) yang tertarik mengangkat kisah perampokan tersebut ke dalam sebuah novel.",
+      "sutradara": "Sarjono Sutrisno",
+      "genre": "Action",
+      "durasi": "154",
+      "produksi": "RANS",
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "jadwal": [
+        14,
+        16
+      ],
+      "id": 5
     },
     {
-      "id": 2,
-      "title": "Last Christmas",
-      "sutradara": "Paul Feig",
-      "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
-      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
-      "genre": "action",
-      "produksi": "Columbia Pictures"
-    },
-    {
-      "data": {
-        "title": "",
-        "image": "",
-        "sinopsis": "",
-        "sutradara": "",
-        "genre": "",
-        "durasi": "",
-        "produksi": "RANS"
-      },
-      "id": 3
+      "title": "The Good Liar",
+      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157423720057093_287x421.jpg",
+      "sinopsis": "Berawal dari perkenalan di situs kencan daring, Roy (Ian McKellen) seorang penipu ulung berhasil mendekati Betty, janda kaya raya dengan harta melimpah.  Tapi hubungan keduanya mendapat respon keras dari keluarga Betty, yang menduga Roy punya niat jahat. Saat memulai misinya ternyata Roy justru jatuh cinta kepada Betty.  Roy yang awalnya bisa menjalankan misinya dengan mudah, justru harus melalui melewati jalan yang bisa membahayakan dirinya.",
+      "sutradara": "Bill Condon",
+      "genre": "Drama",
+      "durasi": "111",
+      "produksi": "RANS",
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "jadwal": [
+        14,
+        16
+      ],
+      "id": 6
     }
   ]
 }

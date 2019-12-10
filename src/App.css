@@ -6,6 +6,7 @@
   border: yellow 1px solid;
 } */
 .kartu {
+  /* border: 2px solid red; */
   border-radius: 10px;
   overflow: hidden;
 }
@@ -19,4 +20,56 @@
 .gambaar1 {
   border-radius: 10px;
   overflow: hidden;
+}
+/* .carousel {
+  height: 500px;
+  border: 2px solid red;
+} */
+.carousel-item {
+  /* border: 2px solid green; */
+  width: 400px;
+  height: 100%;
+}
+.carousel-caption {
+  /* border: 2px solid black; */
+  color: black;
+  margin-bottom: 100px;
+  margin-left: 200px;
+  height: 300px;
+  width: 500px;
+}
+
+.aa {
+  /* border: 2px solid red; */
+  text-align: center;
+}
+.aa > h1 {
+  color: black;
+}
+
+.container-carousel {
+  background-color: #343a4017;
+  width: 50%;
+  margin-left: 500px;
+}
+.readmore span:hover {
+  cursor: pointer;
+  color: grey;
+  transition: 1000ms;
+}
+.readmore span {
+  color: red;
+}
+.btncard {
+  width: 100%;
+  margin-top: 10px;
+}
+.gambar-carousel img {
+  height: 500px;
+  width: 1500px;
+}
+.trailer{
+  background-color: transparent;
+  height: 500px;
+  padding:0
 }

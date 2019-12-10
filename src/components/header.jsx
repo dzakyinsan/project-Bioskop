@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,28 +10,29 @@ const Header = props => {
 
   return (
     <div>
-      <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+      <Navbar sticky="top" color="dark" dark expand="md">
+        <NavbarBrand href="/">LayarKaca 21</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+          <Nav className="mr-auto" navbar>
+            <NavItem className="mr-2">
+              <Link to={"/manageadmin"}>Manage Admin</Link>
             </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+
+            {props.namauser === "" ? (
+              <NavItem>
+                <Link to={"/login"}>Login</Link>
+              </NavItem>
+            ) : 
+          null
+            }
+
+
+            {props.namauser === "" ? null : (
+              <NavItem>
+                <Link to=""> {props.namauser} </Link>
+              </NavItem>
+            )}
           </Nav>
         </Collapse>
       </Navbar>
@@ -37,4 +40,10 @@ const Header = props => {
   );
 };
 
-export default Header;
+const MapStateToProps = state => {
+  return {
+    namauser: state.Auth.username
+  };
+};
+
+export default connect(MapStateToProps)(Header);

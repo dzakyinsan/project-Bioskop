@@ -10,7 +10,10 @@ import { connect } from "react-redux";
 import { LoginSuccessAction } from "./redux/actions";
 import Axios from "axios";
 import { APIURL } from "./support/ApiUrl";
-import Belitiket from './pages/belitiket'
+import Belitiket from "./pages/belitiket";
+import Register from "./pages/register";
+import Cart from "./pages/cart";
+// import Slide from "./components/slide";
 
 class App extends Component {
   state = {
@@ -18,17 +21,17 @@ class App extends Component {
   };
 
   componentDidMount() {
-    var id = localStorage.getItem("jamal");
-    console.log(id);
+    var id = localStorage.getItem("user");
+    console.log("id", id);
     Axios.get(`${APIURL}users/${id}`)
-    //ini maksud id nya tug gimana?
+      //ini maksud id nya tug gimana?
       .then(res => {
         this.props.LoginSuccessAction(res.data);
         this.setState({ loading: false });
       })
       .catch(err => {
         console.log(err);
-        this.setState({loading:false})
+        this.setState({ loading: false });
       });
   }
 
@@ -41,15 +44,15 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path={"/"} exact>
+            {/* <Slide /> */}
             <Home />
           </Route>
-          <Route path={"/manageadmin"} exact>
-            <ManageAdmin />
-          </Route>
-          <Route path={"/moviedetail/:id"} exact component={Moviedetail}/>
-          <Route path={"/belitiket"} component={Belitiket}/>
-          <Route path={"/login"} exact component={Login}/>
-
+          <Route path={"/manageadmin"} exact component={ManageAdmin} />
+          <Route path={"/moviedetail/:id"} exact component={Moviedetail} />
+          <Route path={"/belitiket"} component={Belitiket} />
+          <Route path={"/login"} exact component={Login} />
+          <Route path={"/register"} exact component={Register} />
+          <Route path={"/cart"} component={Cart} />
         </Switch>
       </div>
     );

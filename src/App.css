@@ -21,36 +21,13 @@
   border-radius: 10px;
   overflow: hidden;
 }
-/* .carousel {
-  height: 500px;
-  border: 2px solid red;
-} */
-.carousel-item {
-  /* border: 2px solid green; */
-  width: 400px;
-  height: 100%;
-}
-.carousel-caption {
-  /* border: 2px solid black; */
-  color: black;
-  margin-bottom: 100px;
-  margin-left: 200px;
-  height: 300px;
-  width: 500px;
-}
-
-.aa {
-  /* border: 2px solid red; */
-  text-align: center;
-}
-.aa > h1 {
-  color: black;
-}
 
 .container-carousel {
-  background-color: #343a4017;
-  width: 50%;
-  margin-left: 500px;
+  /* background-color: #343a4017;
+  border: 2px solid black;
+  width: 600px; */
+  height: 300px;
+  /* margin-left: 0px; */
 }
 .readmore span:hover {
   cursor: pointer;
@@ -64,12 +41,57 @@
   width: 100%;
   margin-top: 10px;
 }
-.gambar-carousel img {
-  height: 500px;
-  width: 1500px;
-}
-.trailer{
+
+.trailer {
   background-color: transparent;
   height: 500px;
-  padding:0
+  padding: 0;
+}
+.btn-order {
+  width: 43px;
+  height: 40px;
+  background-color: whitesmoke;
+  color: #5b0008;
+  border: 1px solid #5b0008;
+  transition: 200ms;
+}
+
+.btn-order:focus {
+  outline-color: #5b0008;
+}
+
+.btn-order:hover {
+  font-weight: bolder;
+}
+
+.btn-disble {
+  width: 43px;
+  height: 40px;
+  background-color: whitesmoke;
+  color: #5b0008;
+  border: 1px solid #5b0008;
+}
+.btn-pilih {
+  color: whitesmoke;
+  background-color: #5b0008d7;
+  border: 1px solid whitesmoke;
+  width: 43px;
+  height: 40px;
+}
+.slider img{
+  height:500px
+}
+.header{
+background-color:whitesmoke;
+}
+.aa{
+text-align: center;}
+
+.movie-detail{
+  width:100%;
+  /* border:2px solid red */
+}
+.sinopsis{
+  width: 900px;
+
 }

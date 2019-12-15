@@ -3,17 +3,32 @@
     {
       "id": 1,
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "admin"
     },
     {
       "id": 2,
       "username": "dobleh",
-      "password": "qwe"
+      "password": "qwe",
+      "role": "user"
     },
     {
       "id": 3,
       "username": "jamal",
-      "password": "1234"
+      "password": "1234",
+      "role": "user"
+    },
+    {
+      "username": "james",
+      "password": "11",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "username": "jaja",
+      "password": "11",
+      "role": "user",
+      "id": 5
     }
   ],
   "studios": [
@@ -43,6 +58,7 @@
       "durasi": "121",
       "produksi": "RANS",
       "jadwal": [
+        12,
         20,
         22
       ],
@@ -67,7 +83,6 @@
       "id": 2
     },
     {
-      "id": 3,
       "title": "Habibie & Ainun 3",
       "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157466395513352_287x421.jpg",
       "sinopsis": "Kisah Ainun (Maudy Ayunda) sebagaimana remaja di usianya ,punya kisah kasih yang cukup unik, menggelitik dan menarik.Saat di SMA, Ainun dikenal sebagai sosok cerdas yang menjadi pujaan di sekolahnya dan menjadi incaran banyak siswa laki-laki, termasuk Habibie. Hubungan mereka bermula dari sebuah pertemanan. Di bangku kuliah Ainun, Sebagai mahasiswi kedokteran menjadi sosok yang popular di lingkungan kampusnya dan menjadi sosok dambaan setiap pria.Ahmad (Jefri Nichols), Pria tampan yang berasal dari keluarga terpandang dan kawan sekampus Ainun adalah pria yang akhirnya ia berani menyatakan cintanya kepada Ainun. Lantas apa yang membuat BJ Habibie menjadi pelabuhan terakhir perjalanan cinta Ainun. Habibie Ainun 3, Terinspirasi dari masa muda almarhumah Hasri Ainun Besari Habibie dan kenangan BJ Habibie atas belahan jiwanya.",
@@ -75,11 +90,14 @@
       "genre": "romance",
       "durasi": "121",
       "produksi": "RANS",
-      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
       "jadwal": [
+        12,
         14,
         16
-      ]
+      ],
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "studioId": "1",
+      "id": 3
     },
     {
       "title": "Eggnoid",
@@ -94,6 +112,7 @@
         12,
         14
       ],
+      "studioId": "1",
       "id": 4
     },
     {
@@ -104,11 +123,13 @@
       "genre": "Action",
       "durasi": "154",
       "produksi": "RANS",
-      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
       "jadwal": [
+        12,
         14,
         16
       ],
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "studioId": "1",
       "id": 5
     },
     {
@@ -119,12 +140,181 @@
       "genre": "Drama",
       "durasi": "111",
       "produksi": "RANS",
-      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
       "jadwal": [
+        12,
         14,
         16
       ],
+      "trailer": "https://www.youtube.com/embed/IA-ZjtdGBh8",
+      "studioId": "1",
       "id": 6
+    },
+    {
+      "title": "aasa",
+      "image": "m",
+      "sinopsis": "m",
+      "sutradara": "d",
+      "genre": "1",
+      "durasi": "1",
+      "produksi": "RANS",
+      "jadwal": [
+        12
+      ],
+      "trailer": "d",
+      "studioId": "1",
+      "id": 7
+    }
+  ],
+  "orders": [
+    {
+      "UserId": 3,
+      "movieId": 3,
+      "totalharga": 75000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 1
+    },
+    {
+      "UserId": 3,
+      "movieId": 3,
+      "totalharga": 50000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 2
+    },
+    {
+      "UserId": 2,
+      "movieId": 3,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 3
+    },
+    {
+      "UserId": 2,
+      "movieId": 1,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 4
+    },
+    {
+      "UserId": 2,
+      "movieId": 3,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 5
+    },
+    {
+      "UserId": 2,
+      "movieId": 3,
+      "totalharga": 50000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 6
+    },
+    {
+      "UserId": 2,
+      "movieId": 3,
+      "totalharga": 75000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 7
+    },
+    {
+      "UserId": 2,
+      "movieId": 3,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 8
+    }
+  ],
+  "ordersDetails": [
+    {
+      "orderId": 1,
+      "seat": 0,
+      "row": 0,
+      "id": 1
+    },
+    {
+      "orderId": 1,
+      "seat": 2,
+      "row": 0,
+      "id": 2
+    },
+    {
+      "orderId": 1,
+      "seat": 1,
+      "row": 0,
+      "id": 3
+    },
+    {
+      "orderId": 2,
+      "seat": 4,
+      "row": 0,
+      "id": 4
+    },
+    {
+      "orderId": 2,
+      "seat": 5,
+      "row": 0,
+      "id": 5
+    },
+    {
+      "orderId": 3,
+      "seat": 4,
+      "row": 2,
+      "id": 6
+    },
+    {
+      "orderId": 4,
+      "seat": 4,
+      "row": 1,
+      "id": 7
+    },
+    {
+      "orderId": 5,
+      "seat": 7,
+      "row": 0,
+      "id": 8
+    },
+    {
+      "orderId": 6,
+      "seat": 7,
+      "row": 0,
+      "id": 9
+    },
+    {
+      "orderId": 6,
+      "seat": 8,
+      "row": 0,
+      "id": 10
+    },
+    {
+      "orderId": 7,
+      "seat": 7,
+      "row": 0,
+      "id": 11
+    },
+    {
+      "orderId": 7,
+      "seat": 10,
+      "row": 1,
+      "id": 12
+    },
+    {
+      "orderId": 7,
+      "seat": 8,
+      "row": 0,
+      "id": 13
+    },
+    {
+      "orderId": 8,
+      "seat": 10,
+      "row": 0,
+      "id": 14
     }
   ]
 }

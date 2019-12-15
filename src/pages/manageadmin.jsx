@@ -4,6 +4,11 @@ import { Table, TableBody, TableHead, TableCell, TableRow } from "@material-ui/c
 import { APIURL } from "../support/ApiUrl";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import Fade from "react-reveal";
+import {MdLibraryAdd} from 'react-icons/md'
+import {FiEdit,FiPlusSquare} from 'react-icons/fi'
+
+
+
 
 class ManageAdmin extends Component {
   state = {
@@ -229,7 +234,7 @@ renderEditCheckbox=(indexedit)=>{
     return (
       <div className="mx-3">
         <Modal isOpen={this.state.modaladd} toggle={() => this.setState({ modaladd: false })}>
-          <ModalHeader>add data</ModalHeader>
+          <ModalHeader>add data<FiPlusSquare className="mb-2 ml-1"/> </ModalHeader>
           <ModalBody>
             <input type="text" ref="title" placeholder="title" className="form-control mt-3" />
             <input type="text" ref="image" placeholder="image" className="form-control mt-3" />
@@ -238,16 +243,7 @@ renderEditCheckbox=(indexedit)=>{
             <div className='d-flex'>
               {this.renderAddCheckBoc()}
             </div>
-            {/* <input type="checkbox" ref="jadwal0" className="ml-3 mt-3" />
-            12.00
-            <input type="checkbox" ref="jadwal1" className="ml-3" />
-            14.00
-            <input type="checkbox" ref="jadwal2" className="ml-3" />
-            16.00
-            <input type="checkbox" ref="jadwal3" className="ml-3" />
-            18.00
-            <input type="checkbox" ref="jadwal4" className="ml-3" />
-            20.00 */}
+            
             <input type='text' ref='trailer' placeholder='trailer' className='form-control mt-2'/>
             <select ref='studio' className='form-control mt-2'>
               <option value='1'> Studio 1</option>
@@ -270,7 +266,7 @@ renderEditCheckbox=(indexedit)=>{
 
         <Modal isOpen={this.state.modaledit} toggle={() => this.setState({ modaledit: false })}>
           <ModalHeader>
-            Edit Data {dataFilm[indexedit].title}
+            Edit Data {dataFilm[indexedit].title} <FiEdit className='mb-2'/>
           </ModalHeader>
           <ModalBody>
             <input type="text" defaultValue={dataFilm[indexedit].title} ref="edittitle" placeholder="title" className="form-control mt-3" />
@@ -280,16 +276,7 @@ renderEditCheckbox=(indexedit)=>{
             <div className='d-flex'>
               {this.renderEditCheckbox(indexedit)}
             </div>
-            {/* <input type="checkbox" ref="jadwal0" className="ml-3 mt-3" />
-            12.00
-            <input type="checkbox" ref="jadwal1" className="ml-3" />
-            14.00
-            <input type="checkbox" ref="jadwal2" className="ml-3" />
-            16.00
-            <input type="checkbox" ref="jadwal3" className="ml-3" />
-            18.00
-            <input type="checkbox" ref="jadwal4" className="ml-3" />
-            20.00 */}
+            
             <input type='text' ref='edittrailer' defaultValue={dataFilm[indexedit].trailer} placeholder='trailer' className='form-control mt-2'/>
             <select ref='editstudio' className='form-control mt-2'>
               <option value='1'> Studio 1</option>
@@ -313,9 +300,8 @@ renderEditCheckbox=(indexedit)=>{
         </Modal>
 
         <Fade>
-          <button className="btn btn-success" onClick={() => this.setState({ modaladd: true })}>
-            {" "}
-            Add data
+          <button className="btn btn-success mt-2" onClick={() => this.setState({ modaladd: true })}>
+            <MdLibraryAdd style={{fontSize:20}}/> &nbsp; Add Movie
           </button>
           <Table>
             <TableHead>

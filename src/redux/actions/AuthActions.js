@@ -4,3 +4,10 @@ export const LoginSuccessAction=(datauser)=>{
         payload:datauser
     }
 }
+
+export const LogoutSuccessAction=(datauser)=>{
+    return{
+        type:'LOGOUT_SUCCESS',
+        payload:datauser
+    }
+}

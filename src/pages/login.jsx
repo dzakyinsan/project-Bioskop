@@ -19,11 +19,9 @@ class Login extends Component {
     Axios.get(`${APIURL}users?username=${username}&password=${password}`)
       .then(res => {
         if (res.data.length) {
-          localStorage.setItem("jamal", res.data[0].id);
+          localStorage.setItem("user", res.data[0].id);
           this.props.LoginSuccessAction(res.data[0]); //ini buat masukin parameter di Authaction, y nantinya dipake di reducers
-          console.log(res.data[0].id)
-          console.log(res.data[0])
-          console.log(res.data)
+
         } else {
           this.setState({ error: "salah pass" });
         }
@@ -74,7 +72,7 @@ class Login extends Component {
               )}
             </div>
             <div className="mt-2">
-              belum ada akun?<Link>Register</Link> aja mbak/mas
+              belum ada akun?<Link to={'/register'}> Register</Link> dulu cuk
             </div>
           </div>
         </div>

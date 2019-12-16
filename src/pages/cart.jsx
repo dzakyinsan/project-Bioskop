@@ -3,6 +3,7 @@ import Axios from "axios";
 import { APIURL } from "../support/ApiUrl";
 import { connect } from "react-redux";
 import { Table, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Notification } from "./../redux/actions";
 
 class Cart extends Component {
   state = {
@@ -13,6 +14,8 @@ class Cart extends Component {
       console.log(this.props.userId)
     Axios.get(`${APIURL}orders?_expand=movie&UserId=${this.props.userId}&bayar=false`)//apiurl dari orders yg memiliki userId(...) ditambah movienya, dan yg bayarnya = false
       .then(res => {
+        if(res.data.length){
+        }
         var datacart=res.data
         var qtyArr=[]//berisi jumlah tiket per orderId
         console.log('cart res.data',res.data)
@@ -30,10 +33,11 @@ class Cart extends Component {
             var datafinal=[]
             datacart.forEach((val,index)=>{
             datafinal.push({...val,qty:qtyArrFinal[index]})
-            })
+          })
             console.log(datafinal)
             this.setState({datacart:datafinal})
-        }).catch((err)=>{
+            // this.props.Notification(datafinal)
+          }).catch((err)=>{
 
         })
       }).catch(err => {
@@ -43,6 +47,7 @@ class Cart extends Component {
 
   renderCart = () => {
     if (this.state.datacart !== null) {
+      {this.props.Notification(this.state.datacart.length)}
         if(this.state.datacart.length===0){
             return(
                 <tr>
@@ -68,9 +73,9 @@ class Cart extends Component {
 
   render() {
     console.log('datacart',this.state.datacart)
-      if(this.props.userId){
+    if(this.props.userId){
           return(
-      <div>
+            <div>
         <center>
           <Table style={{ width: 600 }}>
             <thead>
@@ -90,8 +95,8 @@ class Cart extends Component {
         </center>
       </div>
           )}
-    return (
-        <div>
+          return (
+            <div>
             404 not found
         </div>
     );
@@ -105,4 +110,4 @@ const MapStateToProps=(state)=>{
     }
 }
 
-export default connect (MapStateToProps) (Cart);
+export default connect (MapStateToProps,{Notification}) (Cart);

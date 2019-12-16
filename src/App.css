@@ -95,3 +95,10 @@ text-align: center;}
   width: 900px;
 
 }
+.angkanotif{
+margin-bottom:25px;
+}
+.logoutbutton{
+  margin-top: 10px;
+  /* border: 2px solid red; */
+}

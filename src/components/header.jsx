@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { FaDoorOpen, FaDoorClosed,FaShoppingCart } from "react-icons/fa";
+import { FaDoorOpen, FaDoorClosed, FaShoppingCart } from "react-icons/fa";
 import { LogoutSuccessAction } from "./../redux/actions";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -35,37 +35,37 @@ const Header = props => {
             ) : null}
 
             {/* ============= nama user/admin === */}
-            {props.namauser===""?
-           null 
-          :
-            <NavItem className='mt-1 mr-4' style={{color:'#cfab7a', fontSize:20}}>
-            Selamat Datang {props.namauser}
-            </NavItem>
-          }
+            {props.namauser === "" ? null : (
+              <NavItem className="mt-3 mr-4" style={{ color: "#cfab7a", fontSize: 20 }}>
+                Selamat Datang {props.namauser}
+              </NavItem>
+            )}
 
             {/* ========= kalo masuk role admin keluar manageadmin== */}
             {props.role === "admin" ? (
-              <NavItem className="manageadmin mt-1 mr-3">
+              <NavItem className="manageadmin mt-3 mr-3">
                 <Link to={"/manageadmin"} style={{ color: "#cfab7a", fontSize: 20 }}>
                   Manage Admin &nbsp;
                 </Link>
               </NavItem>
             ) : null}
 
-            {/* ========= kalo masuk role user keluar shppingcart == */}
+            {/* ========= kalo masuk role user keluar shoppingcart == */}
             {props.role === "user" ? (
               <NavItem className="mr-3 mt-2">
                 <Link to={"/cart"}>
                   <FaShoppingCart style={{ color: "#cfab7a", fontSize: 25 }} />
-
                 </Link>
+                  <button type="text" className="angkanotif btn btn-danger btn-sm" style={{borderRadius:'30px'}} >
+                  {props.notif}
+                  </button>
               </NavItem>
             ) : null}
             {/* ========= kalo udah login== */}
             {props.namauser === "" ? null : (
               <NavItem>
-                <NavLink href="/" onClick={() => LogoutSuccess()} classname='logoutbutton mb-2'>
-                  <FaDoorOpen style={{ color: "#cfab7a", fontSize: 25 }} />
+                <NavLink href="/" onClick={() => LogoutSuccess()} className="logoutbutton ">
+                  <FaDoorOpen style={{ color: "#cfab7a", fontSize: 30 }} />
                 </NavLink>
               </NavItem>
             )}
@@ -80,7 +80,8 @@ const MapStateToProps = state => {
   return {
     namauser: state.Auth.username,
     role: state.Auth.role,
-    login: state.Auth.login
+    login: state.Auth.login,
+    notif: state.NotifReducer
   };
 };
 

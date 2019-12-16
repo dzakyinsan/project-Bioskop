@@ -20,7 +20,7 @@ class Login extends Component {
       .then(res => {
         if (res.data.length) {
           localStorage.setItem("user", res.data[0].id);
-          this.props.LoginSuccessAction(res.data[0]); //ini buat masukin parameter di Authaction, y nantinya dipake di reducers
+          this.props.LoginSuccessAction(res.data[0]); //ini buat masukin parameter di AuthAction, yg nantinya dipake di reducers
 
         } else {
           this.setState({ error: "salah pass" });

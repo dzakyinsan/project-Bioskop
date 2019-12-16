@@ -12,6 +12,7 @@ class Home extends Component {
     readMore: -1
   };
   componentDidMount() {
+
     Axios.get(`${url}Movies`)
       .then(res => {
         this.setState({ dataMovies: res.data });

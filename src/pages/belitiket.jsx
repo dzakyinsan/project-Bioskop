@@ -5,6 +5,8 @@ import { APIURL } from "../support/ApiUrl";
 import { Redirect } from "react-router-dom";
 import { Modal, ModalBody, ModalFooter } from "reactstrap";
 import Numeral from "numeral";
+import { Notification } from "./../redux/actions";
+
 
 class Belitiket extends Component {
   state = {
@@ -89,8 +91,15 @@ class Belitiket extends Component {
       bayar,
       jadwal
     };
+    Axios.get(`${APIURL}orders?_expand=movie&UserId=${this.props.userId}&bayar=false`)
+    .then(res=>{
+      this.props.Notification(res.data.length)//=========================
+    }).catch((err)=>{
+      console.log(err)
+    })
     Axios.post(`${APIURL}orders`, dataorders)
       .then(res => {
+        // this.props.Notification(res.data.length)==========================
         console.log(res.data.id);
         var dataorderdetail = [];
         pilihan.forEach((val, index) => {
@@ -150,7 +159,7 @@ class Belitiket extends Component {
         arr[i].push(1);
       }
     }
-    console.log(this.state.booked);
+    console.log('booked',this.state.booked);
     for (let j = 0; j < this.state.booked.length; j++) {
       arr[this.state.booked[j].row][this.state.booked[j].seat] = 3;
     }
@@ -171,7 +180,7 @@ class Belitiket extends Component {
               );
             } else if (val1 === 2) {
               return (
-                <button key={i} onClick={() => this.onCancelseatClick(index, i)} className="rounded btn-order mr-2 mt-2 btn-pilih text-center">
+                <button key={i} onClick={() => this.onCancelseatClick(index, i)} className="rounded btn-order mr-2 mt-2 bg-success text-center">
                   {alphabet[index] + (i + 1)}
                 </button>
               );
@@ -248,4 +257,4 @@ const MapstateToprops = state => {
     UserId: state.Auth.id
   };
 };
-export default connect(MapstateToprops)(Belitiket);
+export default connect(MapstateToprops,{Notification})(Belitiket);

@@ -13,21 +13,32 @@ import {FiEdit,FiPlusSquare} from 'react-icons/fi'
 class ManageAdmin extends Component {
   state = {
     dataFilm: [],
+    datastudio:[],
     readmoreselected: -1,
     modalad: false,
     modaledit:false,
     indexedit:0,
     jadwal:[12,14,16,18,20,22]
   };
+
   componentDidMount() {
     Axios.get(`${APIURL}movies`)
       .then(res => {
-        this.setState({ dataFilm: res.data });
-      })
-      .catch(err => {
+        Axios.get(`${APIURL}studios`)
+        .then(res1=>{
+          this.setState({
+            dataFilm:res.data,
+            datastudio:res1.data
+          })
+        }).catch(err=>{
+          console.log(err)
+        })
+      }).catch(err => {
         console.log(err);
       });
   }
+
+
   splitini = (a = "") => {
     var b = a.split("").filter((val, index) => index <= 50);
     return b;
@@ -246,9 +257,13 @@ renderEditCheckbox=(indexedit)=>{
             
             <input type='text' ref='trailer' placeholder='trailer' className='form-control mt-2'/>
             <select ref='studio' className='form-control mt-2'>
-              <option value='1'> Studio 1</option>
-              <option value='2'> Studio 2</option>
-              <option value='3'> Studio 3</option>
+              {
+                this.state.datastudio.map((val)=>{
+                  return(
+                  <option value={val.id}>{val.nama}</option>
+                  )
+                })
+              }
             </select>
             <input type="text" ref="sutradara" placeholder="sutradara" className="form-control mt-3" />
             <input type="number" ref="durasi" placeholder="durasi" className="form-control mt-3" />

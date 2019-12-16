@@ -29,6 +29,12 @@
       "password": "11",
       "role": "user",
       "id": 5
+    },
+    {
+      "username": "asa",
+      "password": "asa",
+      "role": "user",
+      "id": 6
     }
   ],
   "studios": [
@@ -246,6 +252,62 @@
       "bayar": false,
       "jadwal": 12,
       "id": 12
+    },
+    {
+      "UserId": 6,
+      "movieId": 3,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 13
+    },
+    {
+      "UserId": 6,
+      "movieId": 4,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 14
+    },
+    {
+      "UserId": 6,
+      "movieId": 4,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 15
+    },
+    {
+      "UserId": 6,
+      "movieId": 4,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 16
+    },
+    {
+      "UserId": 6,
+      "movieId": 4,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 17
+    },
+    {
+      "UserId": 6,
+      "movieId": 4,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 18
+    },
+    {
+      "UserId": 6,
+      "movieId": 3,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 19
     }
   ],
   "ordersDetails": [
@@ -362,6 +424,48 @@
       "seat": 6,
       "row": 0,
       "id": 19
+    },
+    {
+      "orderId": 13,
+      "seat": 10,
+      "row": 8,
+      "id": 20
+    },
+    {
+      "orderId": 14,
+      "seat": 12,
+      "row": 1,
+      "id": 21
+    },
+    {
+      "orderId": 15,
+      "seat": 9,
+      "row": 2,
+      "id": 22
+    },
+    {
+      "orderId": 16,
+      "seat": 12,
+      "row": 2,
+      "id": 23
+    },
+    {
+      "orderId": 17,
+      "seat": 8,
+      "row": 1,
+      "id": 24
+    },
+    {
+      "orderId": 18,
+      "seat": 6,
+      "row": 1,
+      "id": 25
+    },
+    {
+      "orderId": 19,
+      "seat": 7,
+      "row": 2,
+      "id": 26
     }
   ]
 }

@@ -31,7 +31,7 @@ class Belitiket extends Component {
     console.log("studioId", this.props);
     Axios.get(`${APIURL}studios/${studioId}`)
       .then(res1 => {
-        Axios.get(`${APIURL}orders?movieId=${movieId}&jadwal=${this.state.jam}`)
+        Axios.get(`${APIURL}orders?ovieId=${movieId}&jadwal=${this.state.jam}`)
           .then(res2 => {
             var arrAxios = [];
             res2.data.forEach(val => {
@@ -225,7 +225,10 @@ class Belitiket extends Component {
           <Modal isOpen={this.state.openmodalcart}>
             <ModalBody>cart berhasil ditambah</ModalBody>
             <ModalFooter>
-              <button onClick={() => this.setState({ openmodalcart: false })}>Ok</button>
+              <button className='btn btn-success' onClick={() => this.setState({ openmodalcart: false })}>
+                {/* <Link to='/belitiket'></Link> */}
+                Ok
+                </button>
             </ModalFooter>
           </Modal>
           <center className="mt-1">

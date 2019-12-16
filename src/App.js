@@ -13,11 +13,12 @@ import { APIURL } from "./support/ApiUrl";
 import Belitiket from "./pages/belitiket";
 import Register from "./pages/register";
 import Cart from "./pages/cart";
-// import Slide from "./components/slide";
+import { Notification } from "./redux/actions";
 
 class App extends Component {
   state = {
-    loading: true
+    loading: true,
+    datacart: []
   };
 
   componentDidMount() {
@@ -27,10 +28,23 @@ class App extends Component {
       //ini maksud id nya tug gimana?
       .then(res => {
         this.props.LoginSuccessAction(res.data);
-        this.setState({ loading: false });
+        Axios.get(`${APIURL}orders?_expand=movie&UserId=${this.props.userId}&bayar=false`)
+          .then(res1 => {
+            var datacart = res1.data;
+            console.log(res1);
+            this.setState({
+              datacart: datacart,
+              loading: false
+            });
+          })
+          .catch(err1 => {
+            console.log(err1);
+          });
       })
       .catch(err => {
         console.log(err);
+      })
+      .finally(() => {
         this.setState({ loading: false });
       });
   }
@@ -39,6 +53,10 @@ class App extends Component {
     if (this.state.loading) {
       return <div>Loading...</div>;
     }
+    {
+      this.props.Notification(this.state.datacart.length);
+    }
+    console.log(this.props.Notification);
     return (
       <div>
         <Header />
@@ -61,8 +79,9 @@ class App extends Component {
 
 const MapStateToProps = state => {
   return {
-    AuthLog: state.Auth.login
+    AuthLog: state.Auth.login,
+    userId: state.Auth.id
   };
 };
 
-export default connect(MapStateToProps, { LoginSuccessAction })(App);
+export default connect(MapStateToProps, { LoginSuccessAction, Notification })(App);

@@ -46,7 +46,7 @@ const Header = props => {
 
             {/* ========= kalo masuk role admin keluar manageadmin== */}
             {props.role === "admin" ? (
-              <NavItem className="manageadmin mt-3 mr-3">
+              <NavItem className="manageadmin mt-2 mr-3">
                 <Link to={"/manageadmin"} style={{ color: "#cfab7a", fontSize: 20 }}>
                   Manage Admin &nbsp;
                 </Link>
@@ -61,13 +61,6 @@ const Header = props => {
                   <ConfirmationNumberIcon style={{ color: "#cfab7a", fontSize: 30 }}/>
                 </Badge>
                 </Link>
-                {/* <Link to={"/cart"}>
-                  <FaShoppingCart style={{ color: "#cfab7a", fontSize: 25 }} />
-                </Link> */}
-                {/* <button type="text" className="angkanotif btn btn-danger btn-sm" style={{borderRadius:'30px'}} >
-                  {props.notif}
-                  {console.log('notif',props.notif)}
-                  </button> */}
               </NavItem>
             ) : null}
 

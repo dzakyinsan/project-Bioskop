@@ -7,7 +7,6 @@ import { Modal, ModalBody, ModalFooter } from "reactstrap";
 import Numeral from "numeral";
 import { Notification } from "./../redux/actions";
 
-
 class Belitiket extends Component {
   state = {
     datamovie: {},
@@ -31,7 +30,7 @@ class Belitiket extends Component {
     console.log("studioId", this.props);
     Axios.get(`${APIURL}studios/${studioId}`)
       .then(res1 => {
-        Axios.get(`${APIURL}orders?ovieId=${movieId}&jadwal=${this.state.jam}`)
+        Axios.get(`${APIURL}orders?movieId=${movieId}&jadwal=${this.state.jam}`)
           .then(res2 => {
             var arrAxios = [];
             res2.data.forEach(val => {
@@ -91,18 +90,11 @@ class Belitiket extends Component {
       bayar,
       jadwal
     };
-    Axios.get(`${APIURL}orders?_expand=movie&UserId=${this.props.userId}&bayar=false`)
-    .then(res=>{
-      this.props.Notification(res.data.length)//=========================
-    }).catch((err)=>{
-      console.log(err)
-    })
     Axios.post(`${APIURL}orders`, dataorders)
       .then(res => {
-        // this.props.Notification(res.data.length)==========================
         console.log(res.data.id);
         var dataorderdetail = [];
-        pilihan.forEach((val, index) => {
+        pilihan.forEach(val => {
           dataorderdetail.push({
             orderId: res.data.id,
             seat: val.seat,
@@ -114,18 +106,15 @@ class Belitiket extends Component {
         dataorderdetail.forEach(val => {
           dataorderdetail2.push(Axios.post(`${APIURL}ordersDetails`, val));
         });
-        Axios.all(dataorderdetail2)
-          .then(res1 => {
-            console.log(res1);
-            this.setState({ openmodalcart: true });
-          })
-          .catch(err => {
-            console.log(err);
-          });
+        Axios.all(dataorderdetail2).then(res1 => {
+          console.log(res1);
+          this.setState({ openmodalcart: true });
+        });
       })
       .catch(err => {
-        console.loh(err);
+        console.log(err);
       });
+
   };
 
   renderHargadanQuantity = () => {
@@ -153,19 +142,19 @@ class Belitiket extends Component {
 
   renderseat = () => {
     var arr = [];
-    for (let i = 0; i < this.state.baris; i++) {
+    for (var i = 0; i < this.state.baris; i++) {
       arr.push([]);
-      for (let j = 0; j < this.state.seats / this.state.baris; j++) {
+      for (var j = 0; j < this.state.seats / this.state.baris; j++) {
         arr[i].push(1);
       }
     }
-    console.log('booked',this.state.booked);
-    for (let j = 0; j < this.state.booked.length; j++) {
-      arr[this.state.booked[j].row][this.state.booked[j].seat] = 3;
+    console.log("booked", this.state.booked);
+    for (var l = 0; l < this.state.booked.length; l++) {
+      arr[this.state.booked[l].row][this.state.booked[l].seat] = 3;
     }
 
-    for (let a = 0; a < this.state.pilihan.length; a++) {
-      arr[this.state.pilihan[a].row][this.state.pilihan[a].seat] = 2;
+    for (let k = 0; k < this.state.pilihan.length; k++) {
+      arr[this.state.pilihan[k].row][this.state.pilihan[k].seat] = 2;
     }
     var alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
     var jsx = arr.map((val, index) => {
@@ -214,6 +203,11 @@ class Belitiket extends Component {
     });
   };
 
+  functionRefresh=()=>{
+    this.setState({ openmodalcart: false })
+    window.location.reload()
+  }
+
   render() {
     console.log("state belitiket", this.props);
     if (this.props.location.state && this.props.AuthLog) {
@@ -225,10 +219,10 @@ class Belitiket extends Component {
           <Modal isOpen={this.state.openmodalcart}>
             <ModalBody>cart berhasil ditambah</ModalBody>
             <ModalFooter>
-              <button className='btn btn-success' onClick={() => this.setState({ openmodalcart: false })}>
+              <button className="btn btn-success" onClick={this.functionRefresh}>
                 {/* <Link to='/belitiket'></Link> */}
                 Ok
-                </button>
+              </button>
             </ModalFooter>
           </Modal>
           <center className="mt-1">
@@ -260,4 +254,4 @@ const MapstateToprops = state => {
     UserId: state.Auth.id
   };
 };
-export default connect(MapstateToprops,{Notification})(Belitiket);
+export default connect(MapstateToprops, { Notification })(Belitiket);

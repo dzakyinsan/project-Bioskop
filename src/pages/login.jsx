@@ -19,6 +19,7 @@ class Login extends Component {
     Axios.get(`${APIURL}users?username=${username}&password=${password}`)
       .then(res => {
         if (res.data.length) {
+          window.location.reload()  
           localStorage.setItem("user", res.data[0].id);
           this.props.LoginSuccessAction(res.data[0]); //ini buat masukin parameter di AuthAction, yg nantinya dipake di reducers
 
@@ -31,11 +32,16 @@ class Login extends Component {
         console.log(err);
         this.setState({ loading: false });
       });
+      // window.location<Redirect to={"/"}/>
   };
+//   onClickRefresh=()=>{
+//     <Redirect to={"/"} />
+//  window.location.reload()
+// }
 
   render() {
     if (this.props.AuthLog) {
-      return <Redirect to={"/"} />;
+      return <Redirect to={"/"} />
     }
     return (
       <div>

@@ -30,6 +30,7 @@ class Home extends Component {
     return this.state.dataMovies.map((val, index) => {
       return (
         <div key={index} className="col-md-2 py-5 pr-3 pl-1 ">
+          
           <div className="card kartu " style={{ width: "100%" }}>
             <div className="gambaar1">
               <Link to={"/moviedetail/" + val.id}>

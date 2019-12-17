@@ -10,7 +10,7 @@ const Initial_State={
 export default (state=Initial_State,action)=>{
     switch (action.type) {
         case 'LOGIN_SUCCESS':
-            return {...state,...action.payload,login:true}
+            return {...state,...action.payload,login:true,}
         case 'LOGOUT_SUCCESS':
             return{ Initial_State}
         case 'NOTIFICATION_APPEAR':

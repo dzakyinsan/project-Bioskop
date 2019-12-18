@@ -7,6 +7,7 @@ import { Modal, ModalBody, ModalFooter } from "reactstrap";
 import Numeral from "numeral";
 import { Notification } from "./../redux/actions";
 
+
 class Belitiket extends Component {
   state = {
     datamovie: {},
@@ -220,6 +221,7 @@ class Belitiket extends Component {
 
       return (
         <div>
+          {/* ================== modal ketika selesai order =============== */}
           <Modal isOpen={this.state.openmodalcart}>
             <ModalBody>cart berhasil ditambah</ModalBody>
             <ModalFooter>

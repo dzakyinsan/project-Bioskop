@@ -3,7 +3,7 @@
     {
       "id": 1,
       "username": "admin",
-      "password": "111",
+      "password": "1234",
       "role": "admin"
     },
     {
@@ -45,9 +45,9 @@
   ],
   "studios": [
     {
-      "id": 1,
-      "nama": "studio 1",
-      "jumlahKursi": 260
+      "nama": "studio 11",
+      "jumlahKursi": "260",
+      "id": 1
     },
     {
       "id": 2,
@@ -200,6 +200,14 @@
       "totalharga": 25000,
       "bayar": true,
       "id": 4
+    },
+    {
+      "UserId": 2,
+      "movieId": 3,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 5
     }
   ],
   "ordersDetails": [
@@ -238,6 +246,12 @@
       "seat": 3,
       "row": 3,
       "id": 6
+    },
+    {
+      "orderId": 5,
+      "seat": 8,
+      "row": 0,
+      "id": 7
     }
   ]
 }

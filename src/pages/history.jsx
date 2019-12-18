@@ -92,9 +92,8 @@ class Cart extends Component {
           <Modal isOpen={this.state.modaldetail} toggle={() => this.setState({ modaldetail: false })} size="sm">
             <ModalHeader>{this.state.modalindex !== "" ? <div>Detail orderan no. {this.state.datacart[this.state.modalindex].id} </div> : null}</ModalHeader>
             <ModalBody>
-              status pembayaran: Selesai
               <center>
-                <table className="mt-2">
+                <table>
                   <thead>
                     <tr>
                       <td style={{ width: "50px" }}>

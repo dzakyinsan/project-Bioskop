@@ -135,7 +135,7 @@ class Cart extends Component {
             <TableCell>{val.qty.length} </TableCell>
             <TableCell>Rp. {val.totalharga} </TableCell>
             <TableCell>
-              <button className="mt-2 mb-2 mr-2 btn btn-info" onClick={() => this.setState({ modaldetail: true, modalindex: index })}>
+              <button className="mt-0 mb-0 mr-2 btn btn-info" onClick={() => this.setState({ modaldetail: true, modalindex: index })}>
                 Detail
               </button>
             </TableCell>
@@ -150,7 +150,8 @@ class Cart extends Component {
     if (this.props.userId) {
       return (
         <div>
-          <Modal
+          {/* ...................................................modal buat detail cart.............. */}
+          <Modal style={{width:"250px"}}
             isOpen={this.state.modaldetail}
             toggle={() => {
               this.setState({ modaldetail: false });
@@ -195,7 +196,7 @@ class Cart extends Component {
             </ModalFooter>
           </Modal>
           <center>
-            <Table className="table" style={{ width: 1500 }}>
+            <Table className="table" >
               <thead className="thead-light">
                 <tr>
                   <th scope="col" style={{ width: 100 }}>
@@ -222,7 +223,7 @@ class Cart extends Component {
               </thead>
               <tbody>{this.renderCart()}</tbody>
               <tfoot>
-                <button className="btn btn-success" onClick={() => this.setState({ modalcheckout: true })}>
+                <button className="btn btn-success mt-2 ml-5"  onClick={() => this.setState({ modalcheckout: true })}>
                   Checkout
                 </button>
               </tfoot>

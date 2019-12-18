@@ -6,6 +6,7 @@ import { FaDoorOpen, FaDoorClosed, FaShoppingCart } from "react-icons/fa";
 import { LogoutSuccessAction } from "./../redux/actions";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Badge from "@material-ui/core/Badge";
+import HistoryIcon from '@material-ui/icons/History';
 import ConfirmationNumberIcon from "@material-ui/icons/ConfirmationNumber";
 
 const LogoutSuccess = () => {
@@ -65,12 +66,16 @@ const Header = props => {
 
             {/* ========= kalo masuk role user keluar shoppingcart == */}
             {props.role === "user" ? (
-              <NavItem className="mr-3 mt-2">
+              <NavItem className="mr-3 mt-1">
                 <Button className='mr-3'>
                   <Link to={"/changepass"} style={{ color: "#cfab7a", fontSize: 18, textDecoration: "none" }}>
                     ganti password &nbsp;
                   </Link>
                 </Button>
+                <Link to={"/history"} className='mr-3'>
+                    <HistoryIcon style={{ color: "#cfab7a", fontSize: 30 }} />
+                </Link>
+
                 <Link to={"/cart"}>
                   <Badge badgeContent={props.notif} color="secondary">
                     <ConfirmationNumberIcon style={{ color: "#cfab7a", fontSize: 30 }} />

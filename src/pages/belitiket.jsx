@@ -209,11 +209,15 @@ class Belitiket extends Component {
   }
 
   render() {
-    console.log("state belitiket", this.props);
+    if(this.props.roleadmin!=='user'){
+      return <Redirect to={"/error"}/>
+    }
+
     if (this.props.location.state && this.props.AuthLog) {
       if (this.state.redirecthome) {
         return <Redirect to={"/"} />;
       }
+
       return (
         <div>
           <Modal isOpen={this.state.openmodalcart}>
@@ -251,7 +255,8 @@ class Belitiket extends Component {
 const MapstateToprops = state => {
   return {
     AuthLog: state.Auth.login,
-    UserId: state.Auth.id
+    UserId: state.Auth.id,
+    roleadmin: state.Auth.role
   };
 };
 export default connect(MapstateToprops, { Notification })(Belitiket);

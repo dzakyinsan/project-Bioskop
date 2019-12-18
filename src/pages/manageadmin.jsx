@@ -4,52 +4,52 @@ import { Table, TableBody, TableHead, TableCell, TableRow } from "@material-ui/c
 import { APIURL } from "../support/ApiUrl";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import Fade from "react-reveal";
-import {MdLibraryAdd} from 'react-icons/md'
-import {FiEdit,FiPlusSquare} from 'react-icons/fi'
+import { MdLibraryAdd } from "react-icons/md";
+import { FiEdit, FiPlusSquare } from "react-icons/fi";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import Swal from 'sweetalert2'
-
+import Swal from "sweetalert2";
 
 class ManageAdmin extends Component {
   state = {
     dataFilm: [],
-    datastudio:[],
+    datastudio: [],
     readmoreselected: -1,
     modalad: false,
-    modaledit:false,
-    indexedit:0,
-    iddelete:-1,
-    jadwal:[12,14,16,18,20,22]
+    modaledit: false,
+    indexedit: 0,
+    iddelete: -1,
+    jadwal: [12, 14, 16, 18, 20, 22]
   };
 
   componentDidMount() {
     Axios.get(`${APIURL}movies`)
       .then(res => {
         Axios.get(`${APIURL}studios`)
-        .then(res1=>{
-          this.setState({
-            dataFilm:res.data,
-            datastudio:res1.data
+          .then(res1 => {
+            this.setState({
+              dataFilm: res.data,
+              datastudio: res1.data
+            });
           })
-        }).catch(err=>{
-          console.log(err)
-        })
-      }).catch(err => {
+          .catch(err => {
+            console.log(err);
+          });
+      })
+      .catch(err => {
         console.log(err);
       });
   }
-
 
   splitini = (a = "") => {
     var b = a.split("").filter((val, index) => index <= 50);
     return b;
   };
 
-  onUpdateDataClick=()=>{
-    var jadwaltempelate =this.state.jadwal
+  onUpdateDataClick = () => {
+    var jadwaltempelate = this.state.jadwal;
     var jadwal = [];
-    var id=this.state.dataFilm[this.state.indexedit].id
+    var id = this.state.dataFilm[this.state.indexedit].id;
     for (var i = 0; i < jadwaltempelate.length; i++) {
       if (this.refs[`editjadwal${i}`].checked) {
         jadwal.push(jadwaltempelate[i]);
@@ -62,8 +62,8 @@ class ManageAdmin extends Component {
     var sutradara = iniref.editsutradara.value;
     var genre = iniref.editgenre.value;
     var durasi = iniref.editdurasi.value;
-    var trailer=iniref.edittrailer.value;
-    var studioId=iniref.editstudio.value
+    var trailer = iniref.edittrailer.value;
+    var studioId = iniref.editstudio.value;
     var produksi = "RANS";
     var data = {
       title: title,
@@ -96,40 +96,34 @@ class ManageAdmin extends Component {
         });
       this.setState({ modaledit: false });
     }
+  };
 
-  }
-
-  onDeleteClick=(index)=>{
+  onDeleteClick = index => {
     Swal.fire({
-      title: 'هل تريد الاستمرار؟',
-      icon: 'question',
+      title: "هل تريد الاستمرار؟",
+      icon: "question",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'نعم',
-      cancelButtonText: 'لا'
-    }).then((result) => {
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "نعم",
+      cancelButtonText: "لا"
+    }).then(result => {
       if (result.value) {
-        const datahapus=this.state.dataFilm
-        this.setState({iddelete:datahapus[index].id})
-        Axios.delete(`${APIURL}movies/${this.state.iddelete}`)
-        .then(()=>{
+        const datahapus = this.state.dataFilm;
+        this.setState({ iddelete: datahapus[index].id });
+        Axios.delete(`${APIURL}movies/${this.state.iddelete}`).then(() => {
           Axios.get(`${APIURL}movies`)
-          .then(res=>{
-            this.setState({dataFilm:res.data})
-          })
-          .catch(err=>{
-            console.log(err)
-          })
-        })
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+            .then(res => {
+              this.setState({ dataFilm: res.data });
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        });
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
-    })
-  }
+    });
+  };
 
   onSaveAddClick = () => {
     var jadwaltempelate = [12, 14, 16, 18, 20];
@@ -146,8 +140,8 @@ class ManageAdmin extends Component {
     var sutradara = iniref.sutradara.value;
     var genre = iniref.genre.value;
     var durasi = iniref.durasi.value;
-    var trailer=iniref.trailer.value;
-    var studioId=iniref.studio.value
+    var trailer = iniref.trailer.value;
+    var studioId = iniref.studio.value;
     var produksi = "RANS";
     var data = {
       title: title,
@@ -169,7 +163,7 @@ class ManageAdmin extends Component {
         .then(() => {
           Axios.get(`${APIURL}movies`)
             .then(res => {
-              this.setState({ dataFilm: res.data,modalad:false });
+              this.setState({ dataFilm: res.data, modalad: false });
             })
             .catch(err => {
               console.log(err);
@@ -209,101 +203,102 @@ class ManageAdmin extends Component {
           <TableCell>{val.genre}</TableCell>
           <TableCell>{val.durasi}</TableCell>
           <TableCell>
-            <button className="btn btn-outline-primary mr-1" onClick={()=>this.setState({modaledit:true,indexedit:index})}>Edit</button>
-            <button className="btn btn-outline-danger" onClick={()=>this.onDeleteClick(index)}>Delete</button>
+            <button className="btn btn-outline-primary mr-1" onClick={() => this.setState({ modaledit: true, indexedit: index })}>
+              Edit
+            </button>
+            <button className="btn btn-outline-danger" onClick={() => this.onDeleteClick(index)}>
+              Delete
+            </button>
           </TableCell>
         </TableRow>
       );
     });
   };
 
-renderAddCheckBoc=()=>{
-  return this.state.jadwal.map((val,index)=>{
-    return(
-      <div key={index}>
-        <input type='checkbox' ref={`jadwal${index}`}/>
-        <span className='mr-2' >{val}.00</span>
-      </div>
-    )
-  })
-}
-
-renderEditCheckbox=(indexedit)=>{
-  var indexarr=[]
-  var datafilmedit=this.state.dataFilm[indexedit].jadwal
-  // datafilmedit.forEach(val => {
-  //   indexarr.push(this.state.jadwal.indexOf(val))
-  // });
-  for(var i=0;i<datafilmedit.length;i++){
-    for(var j=0;j<this.state.jadwal.length;j++){
-      if(datafilmedit[i]===this.state.jadwal[j]){
-        indexarr.push(j)
-      }
-    }
-  }
-  console.log(datafilmedit)
-  var checkbox=this.state.jadwal
-  var checkboxnew=[]
-  checkbox.forEach(val=>{
-    checkboxnew.push({jam:val,tampiledit:false})
-  })
-  indexarr.forEach((val)=>{
-    checkboxnew[val].tampiledit=true
-  })
-  return checkboxnew.map((val,index)=>{
-    if(val.tampiledit){
-      return(
-        <div key={index}>
-          <input type='checkbox' defaultChecked ref={`editjadwal${index}`} value={val.jam}/>
-          <span className='mr-2'>{val.jam}.00 </span>
-        </div>
-      )
-    }else{
+  renderAddCheckBoc = () => {
+    return this.state.jadwal.map((val, index) => {
       return (
         <div key={index}>
-          <input type='checkbox' ref={`editjadwal${index}`} value={val.jam}/>
-          <span className='mr-2'>{val.jam}.00 </span>
+          <input type="checkbox" ref={`jadwal${index}`} />
+          <span className="mr-2">{val}.00</span>
         </div>
-      )
+      );
+    });
+  };
+
+  renderEditCheckbox = indexedit => {
+    var indexarr = [];
+    var datafilmedit = this.state.dataFilm[indexedit].jadwal;
+    // datafilmedit.forEach(val => {
+    //   indexarr.push(this.state.jadwal.indexOf(val))
+    // });
+    for (var i = 0; i < datafilmedit.length; i++) {
+      for (var j = 0; j < this.state.jadwal.length; j++) {
+        if (datafilmedit[i] === this.state.jadwal[j]) {
+          indexarr.push(j);
+        }
+      }
     }
-  })
-}
+    console.log(datafilmedit);
+    var checkbox = this.state.jadwal;
+    var checkboxnew = [];
+    checkbox.forEach(val => {
+      checkboxnew.push({ jam: val, tampiledit: false });
+    });
+    indexarr.forEach(val => {
+      checkboxnew[val].tampiledit = true;
+    });
+    return checkboxnew.map((val, index) => {
+      if (val.tampiledit) {
+        return (
+          <div key={index}>
+            <input type="checkbox" defaultChecked ref={`editjadwal${index}`} value={val.jam} />
+            <span className="mr-2">{val.jam}.00 </span>
+          </div>
+        );
+      } else {
+        return (
+          <div key={index}>
+            <input type="checkbox" ref={`editjadwal${index}`} value={val.jam} />
+            <span className="mr-2">{val.jam}.00 </span>
+          </div>
+        );
+      }
+    });
+  };
 
   render() {
-    const {dataFilm,indexedit}=this.state
-    const {length}=dataFilm
-    if(length===0){ 
-      return <div>Loading...</div>
+    console.log("data film212", this.state.dataFilm);
+    console.log("data studio", this.state.datastudio);
+    const { dataFilm, indexedit } = this.state;
+    const { length } = dataFilm;
+    if (length === 0) {
+      return <div>Loading...</div>;
     }
-    if(this.props.roleadmin!=='admin'){
-      return <Redirect to={"/error"}/>
+    if (this.props.roleadmin !== "admin") {
+      return <Redirect to={"/error"} />;
     }
     //harus pake loading karena datafilm di array awalnya masih kosong, jadi haus pake laoding dulu
     return (
       <div className="mx-3">
-
         {/* ====================modal add================================== */}
 
         <Modal isOpen={this.state.modaladd} toggle={() => this.setState({ modaladd: false })}>
-          <ModalHeader>add data<FiPlusSquare className="mb-2 ml-1"/> </ModalHeader>
+          <ModalHeader>
+            add data
+            <FiPlusSquare className="mb-2 ml-1" />{" "}
+          </ModalHeader>
           <ModalBody>
             <input type="text" ref="title" placeholder="title" className="form-control mt-3" />
             <input type="text" ref="image" placeholder="image" className="form-control mt-3" />
             <input type="text" ref="sinopsis" placeholder="sinopsis" className="form-control mt-3" />
             Jadwal:
-            <div className='d-flex'>
-              {this.renderAddCheckBoc()}
-            </div>
-            
-            <input type='text' ref='trailer' placeholder='trailer' className='form-control mt-2'/>
-            <select ref='studio' className='form-control mt-2'>
-              {
-                this.state.datastudio.map((val)=>{
-                  return(
-                  <option value={val.id}>{val.nama}</option>
-                  )
-                })
-              }
+            <div className="d-flex">{this.renderAddCheckBoc()}</div>
+            <input type="text" ref="trailer" placeholder="trailer" className="form-control mt-2" />
+            <select ref="studio" className="form-control mt-2">
+              {this.state.datastudio.map(val => {
+                return <option value={val.id}>{val.nama}</option>;
+              })}
             </select>
             <input type="text" ref="sutradara" placeholder="sutradara" className="form-control mt-3" />
             <input type="number" ref="durasi" placeholder="durasi" className="form-control mt-3" />
@@ -323,24 +318,22 @@ renderEditCheckbox=(indexedit)=>{
 
         <Modal isOpen={this.state.modaledit} toggle={() => this.setState({ modaledit: false })}>
           <ModalHeader>
-            Edit Data {dataFilm[indexedit].title} <FiEdit className='mb-2'/>
+            Edit Data {dataFilm[indexedit].title} <FiEdit className="mb-2" />
           </ModalHeader>
           <ModalBody>
             <input type="text" defaultValue={dataFilm[indexedit].title} ref="edittitle" placeholder="title" className="form-control mt-3" />
             <input type="text" defaultValue={dataFilm[indexedit].image} ref="editimage" placeholder="image" className="form-control mt-3" />
-            <textarea type="text" rows='5' defaultValue={dataFilm[indexedit].sinopsis} ref="editsinopsis" placeholder="sinopsis" className="form-control mt-3" />
+            <textarea type="text" rows="5" defaultValue={dataFilm[indexedit].sinopsis} ref="editsinopsis" placeholder="sinopsis" className="form-control mt-3" />
             Jadwal:
-            <div className='d-flex'>
-              {this.renderEditCheckbox(indexedit)}
-            </div>
-            
-            <input type='text' ref='edittrailer' defaultValue={dataFilm[indexedit].trailer} placeholder='trailer' className='form-control mt-2'/>
-            <select ref='editstudio' className='form-control mt-2'>
-              <option value='1'> Studio 1</option>
-              <option value='2'> Studio 2</option>
-              <option value='3'> Studio 3</option>
-              
-
+            <div className="d-flex">{this.renderEditCheckbox(indexedit)}</div>
+            <input type="text" ref="edittrailer" defaultValue={dataFilm[indexedit].trailer} placeholder="trailer" className="form-control mt-2" />
+            <select ref="editstudio" defaultValue={dataFilm[indexedit].studioId} className="form-control mt-2">
+              {this.state.datastudio.map(val => {
+                return <option value={val.id}>{val.nama}</option>;
+              })}
+              {/* <option value="1"> Studio 1</option>
+              <option value="2"> Studio 2</option>
+              <option value="3"> Studio 3</option> */}
             </select>
             <input type="text" ref="editsutradara" defaultValue={dataFilm[indexedit].sutradara} placeholder="sutradara" className="form-control mt-3" />
             <input type="number" ref="editdurasi" defaultValue={dataFilm[indexedit].durasi} placeholder="durasi" className="form-control mt-3" />
@@ -358,7 +351,7 @@ renderEditCheckbox=(indexedit)=>{
 
         <Fade>
           <button className="btn btn-success mt-2" onClick={() => this.setState({ modaladd: true })}>
-            <MdLibraryAdd style={{fontSize:20}}/> &nbsp; Add Movie
+            <MdLibraryAdd style={{ fontSize: 20 }} /> &nbsp; Add Movie
           </button>
           <Table>
             <TableHead>
@@ -386,6 +379,5 @@ const MapStateToProps = state => {
     roleadmin: state.Auth.role
   };
 };
-
 
 export default connect(MapStateToProps)(ManageAdmin);

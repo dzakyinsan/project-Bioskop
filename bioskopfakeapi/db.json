@@ -85,11 +85,11 @@
         22
       ],
       "trailer": "https://www.youtube.com/embed/rBxcF-r9Ibs",
-      "studioId": "1",
+      "studioId": "3",
       "id": 1
     },
     {
-      "title": "Last Chris",
+      "title": "Last Chrismass",
       "image": "https://media.21cineplex.com/webcontent/gallery/pictures/157285280844221_287x421.jpg",
       "sinopsis": "Kate (Emilia Clarke) adalah seorang wanita muda yang mengambil keputusan buruk. Kencan terakhirnya berakhir dengan bencana? Saat diterima di sebuah toko pernak-pernik natal dan berperan sebagai Peri ia bertemu dengan Tom (Henry Golding), Hidupnya berubah lagi. Bagi Kate, sepertinya terlalu bagus untuk menjadi kenyataan.",
       "sutradara": "Paul Feig",
@@ -174,73 +174,69 @@
   ],
   "orders": [
     {
-      "UserId": 3,
-      "movieId": 3,
-      "totalharga": 25000,
-      "bayar": false,
+      "movieId": 1,
       "jadwal": 12,
+      "totalharga": 50000,
+      "bayar": true,
       "id": 1
     },
     {
-      "UserId": 3,
       "movieId": 3,
-      "totalharga": 25000,
-      "bayar": false,
       "jadwal": 12,
+      "totalharga": 50000,
+      "bayar": true,
       "id": 2
     },
     {
-      "UserId": 3,
-      "movieId": 1,
-      "totalharga": 25000,
-      "bayar": false,
+      "movieId": 2,
       "jadwal": 12,
+      "totalharga": 25000,
+      "bayar": true,
       "id": 3
     },
     {
-      "UserId": 3,
-      "movieId": 3,
-      "totalharga": 75000,
-      "bayar": false,
+      "movieId": 5,
       "jadwal": 12,
+      "totalharga": 25000,
+      "bayar": true,
       "id": 4
     }
   ],
   "ordersDetails": [
     {
       "orderId": 1,
-      "seat": 8,
-      "row": 0,
+      "seat": 7,
+      "row": 2,
       "id": 1
     },
     {
-      "orderId": 2,
-      "seat": 6,
+      "orderId": 1,
+      "seat": 8,
       "row": 2,
       "id": 2
     },
     {
-      "orderId": 3,
+      "orderId": 2,
       "seat": 9,
-      "row": 0,
+      "row": 2,
       "id": 3
     },
     {
-      "orderId": 4,
-      "seat": 5,
-      "row": 1,
+      "orderId": 2,
+      "seat": 9,
+      "row": 0,
       "id": 4
     },
     {
-      "orderId": 4,
-      "seat": 6,
-      "row": 1,
+      "orderId": 3,
+      "seat": 5,
+      "row": 8,
       "id": 5
     },
     {
       "orderId": 4,
-      "seat": 7,
-      "row": 1,
+      "seat": 3,
+      "row": 3,
       "id": 6
     }
   ]

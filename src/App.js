@@ -16,7 +16,8 @@ import Cart from "./pages/cart";
 import Error1 from "./pages/error"
 import { Notification } from "./redux/actions";
 import Managestudio from "./pages/managestudio";
-import Changepass from './pages/changepass'
+import Changepass from './pages/changepass';
+import History from './pages/history'
 
 class App extends Component {
   state = {
@@ -77,6 +78,7 @@ class App extends Component {
           <Route path={"/error"} exact component={Error1 } />
           <Route path={"/managestudio"} exact component={Managestudio } />
           <Route path={"/changepass"} component={Changepass} />
+          <Route path={'/history'} component={History}/>
 
 
         </Switch>

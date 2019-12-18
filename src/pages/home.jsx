@@ -51,12 +51,6 @@ class Home extends Component {
                   <span onClick={() => this.setState({ readMore: index })}> Read More</span>
                 </p>
               )}
-              <a href="/deskripsifilm" className="btn btn-info btncard">
-                Description
-              </a>
-              <a href="#" className="btn btn-warning btncard">
-                Buy Ticket
-              </a>
             </div>
           </div>
         </div>

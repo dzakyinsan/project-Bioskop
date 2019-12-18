@@ -3,7 +3,7 @@
     {
       "id": 1,
       "username": "admin",
-      "password": "123",
+      "password": "111",
       "role": "admin"
     },
     {
@@ -35,6 +35,12 @@
       "password": "asa",
       "role": "user",
       "id": 6
+    },
+    {
+      "username": "james2",
+      "password": "123",
+      "role": "user",
+      "id": 7
     }
   ],
   "studios": [
@@ -52,6 +58,16 @@
       "id": 3,
       "nama": "studio 3",
       "jumlahKursi": 200
+    },
+    {
+      "nama": "studio 86",
+      "jumlahKursi": "480",
+      "id": 4
+    },
+    {
+      "nama": "studio mawang",
+      "jumlahKursi": "111",
+      "id": 5
     }
   ],
   "movies": [
@@ -172,6 +188,22 @@
       "bayar": false,
       "jadwal": 12,
       "id": 2
+    },
+    {
+      "UserId": 3,
+      "movieId": 1,
+      "totalharga": 25000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 3
+    },
+    {
+      "UserId": 3,
+      "movieId": 3,
+      "totalharga": 75000,
+      "bayar": false,
+      "jadwal": 12,
+      "id": 4
     }
   ],
   "ordersDetails": [
@@ -186,6 +218,30 @@
       "seat": 6,
       "row": 2,
       "id": 2
+    },
+    {
+      "orderId": 3,
+      "seat": 9,
+      "row": 0,
+      "id": 3
+    },
+    {
+      "orderId": 4,
+      "seat": 5,
+      "row": 1,
+      "id": 4
+    },
+    {
+      "orderId": 4,
+      "seat": 6,
+      "row": 1,
+      "id": 5
+    },
+    {
+      "orderId": 4,
+      "seat": 7,
+      "row": 1,
+      "id": 6
     }
   ]
 }

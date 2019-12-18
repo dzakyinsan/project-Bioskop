@@ -13,7 +13,10 @@ import { APIURL } from "./support/ApiUrl";
 import Belitiket from "./pages/belitiket";
 import Register from "./pages/register";
 import Cart from "./pages/cart";
+import Error1 from "./pages/error"
 import { Notification } from "./redux/actions";
+import Managestudio from "./pages/managestudio";
+import Changepass from './pages/changepass'
 
 class App extends Component {
   state = {
@@ -71,6 +74,11 @@ class App extends Component {
           <Route path={"/login"} exact component={Login} />
           <Route path={"/register"} exact component={Register} />
           <Route path={"/cart"} component={Cart} />
+          <Route path={"/error"} exact component={Error1 } />
+          <Route path={"/managestudio"} exact component={Managestudio } />
+          <Route path={"/changepass"} component={Changepass} />
+
+
         </Switch>
       </div>
     );

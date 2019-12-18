@@ -45,7 +45,7 @@ class Cart extends Component {
 
   renderCart = () => {
     if (this.state.datacart !== null) {
-      // this.props.Notification(this.state.datacart.length);
+      // this.props.Notification(this.state.datacart.length); 
       if (this.state.datacart.length === 0) {
         return (
           <tr>

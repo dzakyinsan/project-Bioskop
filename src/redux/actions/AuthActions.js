@@ -11,4 +11,9 @@ export const LogoutSuccessAction=(datauser)=>{
         payload:datauser
     }
 }
-
+export const Gantipassword=(datauser)=>{
+    return{
+        type:'GANTI_PASSWORD',
+        payload:datauser
+    }
+}

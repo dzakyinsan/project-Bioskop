@@ -3,8 +3,7 @@ const Initial_State={
     username:'',
     password:'',
     role:'',
-    login:false,
-    jmlcart:'0'
+    login:false
 }
 
 export default (state=Initial_State,action)=>{
@@ -13,8 +12,8 @@ export default (state=Initial_State,action)=>{
             return {...state,...action.payload,login:true,}
         case 'LOGOUT_SUCCESS':
             return{ Initial_State}
-        case 'NOTIFICATION_APPEAR':
-            return{...state,jmlcart:action.payload}
+        case 'GANTI_PASSWORD':
+            return{...state,...action.payload}
         default:
             return state
     }
